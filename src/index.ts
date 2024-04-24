@@ -17,3 +17,8 @@ cliInstance
 	.demandCommand(1, 'You need at least one command')
 	.help()
 	.parse();
+
+process.on('SIGINT', function () {
+	console.log('Caught interrupt signal');
+	process.exit();
+});
